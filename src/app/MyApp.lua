@@ -11,13 +11,16 @@ end
 
 function MyApp:run()
     cc.FileUtils:getInstance():addSearchPath("res/")
-
     require("app.Event")
-    require("app.Network")
 
-    G_ServerHttpPost("user.signin", {username = "ddsadf"}, function(response)
-    	G_ServerWebSocket(response.sid)
-    end)
+    -- g_WebSocket = nil
+    
+    -- require("app.Network")
+
+    -- G_ServerHttpPost("user.signin", {username = "ddsadf"}, function(response)
+    --     dump(response)
+    -- 	G_ServerWebSocket(response.sid)
+    -- end)
 
     -- registerEvent("test", function()
     -- 	print("hello")

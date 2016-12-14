@@ -14,6 +14,10 @@ NetWebSocket.MESSAGE_EVENT = "message"
 NetWebSocket.CLOSE_EVENT   = "close"
 NetWebSocket.ERROR_EVENT   = "error"
 
+function NetWebSocket:ctor()
+
+end
+
 function NetWebSocket:getInstance()
 	if not self._instance then
 		self._instance = self.new()
@@ -41,10 +45,6 @@ function NetWebSocket:onError(event)
 end
 
 function NetWebSocket:connectServer(sid)
-	if self.websocket then
-		
-	end
-
 	local url = "ws://"..self.server_addr.."/"..self.http_entry.."/"
 	self.websokcet = cc.WebSocket:createByAProtocol(url, "gbc-auth-"..sid)
 	if self.websokcet then
